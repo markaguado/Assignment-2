@@ -7,25 +7,25 @@
     // check if user has click post button
     if($_SERVER['REQUEST_METHOD'] == "POST"){
         // something was posted
-        $email = $_POST['email'];
-        $password = $_POST['password'];
+        $admin_user = $_POST['admin_user'];
+        $admin_pass = $_POST['admin_pass'];
 
-        if(!empty($email) && !empty($password) && !is_numeric($email)){
+        if(!empty($admin_user) && !empty($admin_pass)){
             //read from database
             
             // generate user id
             
-            $query = "select * from users where email = '$email' limit 1";
+            $query = "select * from admin_db where admin_user = '$admin_user' limit 1";
         
             $result = mysqli_query($con, $query);
 
             if($result){
                 if($result && mysqli_num_rows($result) > 0){
-                    $user_data = mysqli_fetch_assoc($result);
+                    $user_data_admin = mysqli_fetch_assoc($result);
                     
-                    if($user_data['password'] === $password){
-                        $_SESSION['user_id'] = $user_data['user_id'];
-                        header("Location: index.php");
+                    if($user_data_admin['admin_pass'] === $admin_pass){
+                        $_SESSION['user_id_admin'] = $user_data_admin['user_id_admin'];
+                        header("Location: administrator.php");
                         die;
                     }
                 }
@@ -54,23 +54,22 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Login</title>
+        <title>Admin</title>
     </head>
     <body>
 
-        <h1>Login</h1>
+        <h1>Admin</h1>
         <form method="post">
             <div class="input-group">
-                <label for="email">Email</label>
-                <input type="text" name="email">
+                <label for="admin_user">Username</label>
+                <input type="text" name="admin_user">
             </div>
             <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" name="password">
+                <label for="admin_pass">Password</label>
+                <input type="password" name="admin_pass">
             </div>
 
             <button type="submit">Login</button>
-            <a href="signup.php">Create an account.</a>
         </form>
     </body>
 </html>

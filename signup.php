@@ -1,15 +1,43 @@
 <?php
     session_start();
     // file require
+    include("functions/functions.php");
     include("connection.php");
-    // include("functions/functions.php");
 
-    // user data
-    // $user_data = check_login($con);
+    // check if user has click post button
+    if($_SERVER['REQUEST_METHOD'] == "POST"){
+        // something was posted
+        $email = $_POST['email'];
+        $first_name = $_POST['first_name'];
+        $last_name = $_POST['last_name'];
+        $phone_number = $_POST['phone_number'];
+        $birth_date = $_POST['birth_date'];
+        $password = $_POST['password'];
+
+        if(!empty($email) && !empty($password) &&!empty($first_name) &&!empty($last_name) && !empty($phone_number) && !empty($birth_date) && !is_numeric($email)){
+            // save to database
+            
+            // generate user id
+            $user_id = random_num(10);
+            
+            // $hashed = hash('sha512', $password);
+
+            $query = "insert into users (user_id,email,first_name,last_name,phone_number,birth_date,password) values ('$user_id','$email','$first_name','$last_name','$phone_number','$birth_date','$password')";
+        
+            mysqli_query($con, $query);
+ 
+            // goes to login page if created
+            header("Location: login.php");
+            die;
+
+        }else{
+            echo "enter a valid information!";
+        }
+
+
+    }
     
 ?>
-
-
 
 
 <!DOCTYPE html>
