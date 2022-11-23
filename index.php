@@ -1,11 +1,11 @@
-<?php
+<?php 
+session_start();
 
-    include("connection.php");
-    include("functions.php");
-    session_start();
-    $_SESSION;
+	include("connection.php");
+	include("functions/functions.php");
 
-    $user_data = check_login();
+	$user_data = check_login($con);
+
 ?>
 
 <!DOCTYPE html>
@@ -20,6 +20,6 @@
 
     <a href="logout.php">Logout</a>
     <h1>Index Page</h1>
-
+    <p>hello, <?php echo $user_data['first_name'];?></p>
 </body>
 </html>
