@@ -3,6 +3,8 @@
     // file require
     include("functions/functions.php");
     include("connection.php");
+    // error variable array
+    $errors = array();
 
     // check if user has click post button
     if($_SERVER['REQUEST_METHOD'] == "POST"){
@@ -11,10 +13,8 @@
         $password = $_POST['password'];
 
         if(!empty($email) && !empty($password) && !is_numeric($email)){
+            
             //read from database
-            
-            // generate user id
-            
             $query = "select * from users where email = '$email' limit 1";
         
             $result = mysqli_query($con, $query);
@@ -30,47 +30,48 @@
                     }
                 }
             }
-            echo "wrong user name or password!";
-
-
-            // die;
-
-        }else{
-            echo "wrong user name or password!";
+            // the variable of error becomes true
+            $errors[] = "Invalid Email or password";
         }
-
-
     }
-
-    // user data
-    // $user_data = check_login($con);
-    
 ?>
 
+<?php include("login-header.php")?>
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Login</title>
-    </head>
-    <body>
 
-        <h1>Login</h1>
-        <form method="post">
-            <div class="input-group">
-                <label for="email">Email</label>
-                <input type="text" name="email">
-            </div>
-            <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" name="password">
-            </div>
+ 
+    <section class="login-section">
+        <div class="container-width">
+            <form method="post" id="login-form">
+               
+                <h1>Login Form</h1>
+                <?php 
+                    // if error is true this will display error message
+                    if ($errors) {
+                        foreach ($errors as $error) {
+                            echo "<span>$error</span>";
+                        }
+                    }
+                ?>
+                <div class="input-group">
+                    <label for="email" class="sr-only">Email</label>
+                    <input type="text" name="email" class="">
+                </div>
+                <div class="input-group">
+                    <label for="password" class="sr-only">Password</label>
+                    <input type="password" name="password" class="">
+                </div>
 
-            <button type="submit">Login</button>
-            <a href="signup.php">Create an account.</a>
-        </form>
+                <div class="login-button-container">
+                    <button type="submit" class="login-button">Login</button>
+                    <a href="signup.php" class="create-account">Create an account.</a>
+                    <a href="admin.php" class="create-account">Login as admin</a>
+                </div>
+            </form>
+            
+
+        </div>
+    </section>
+
     </body>
 </html>

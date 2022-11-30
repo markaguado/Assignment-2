@@ -30,56 +30,54 @@
             header("Location: login.php");
             die;
 
-        }else{
-            echo "enter a valid information!";
         }
+        // else{
+        //     echo "enter a valid information!";
+        // }
 
 
     }
     
 ?>
 
+    <?php include("login-header.php")?>
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Signup</title>
-    </head>
-    <body>
+    <section class="signup-section">
+        <div class="container-width">
+            <h1 class="h1-signup">Signup</h1>
+            <form method="post" id="signup-form" onsubmit="validate(); return false">
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input class="form-control" type="text" name="email" id="email">
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input class="form-control" type="password" name="password" id="pass">
+                </div>
+                <div class="input-group">
+                    <label for="first_name">First Name</label>
+                    <input class="form-control" type="text" name="first_name" id="firstname">
+                </div>
+                <div class="input-group">
+                    <label for="last_name">Last Name</label>
+                    <input class="form-control" type="text" name="last_name" id="lastname">
+                </div>
+                <div class="input-group">
+                    <label for="phone_number">Phone Number</label>
+                    <input class="form-control" type="text" name="phone_number" id="phonenumber">
+                </div>
+                <div class="input-group">
+                    <label for="birth_date">Birth Day</label>
+                    <input class="form-control" type="date" name="birth_date" id="birthdate">
+                </div>
 
-        <h1>Signup</h1>
-        <form method="post">
-            <div class="input-group">
-                <label for="email">Email</label>
-                <input type="text" name="email">
-            </div>
-            <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" name="password">
-            </div>
-            <div class="input-group">
-                <label for="first_name">First Name</label>
-                <input type="text" name="first_name">
-            </div>
-            <div class="input-group">
-                <label for="last_name">Last Name</label>
-                <input type="text" name="last_name">
-            </div>
-            <div class="input-group">
-                <label for="phone_number">Phone Number</label>
-                <input type="text" name="phone_number">
-            </div>
-            <div class="input-group">
-                <label for="birth_date">Birth Day</label>
-                <input type="date" name="birth_date">
-            </div>
+                <div class="login-button-container">
+                    <button type="submit" class="login-button">Create Account</button>
+                    <a href="login.php" class="create">Already have an account?</a>
+                </div>
+            </form>
+        </div>
+    </section>
 
-            <button type="submit">Create Account</button>
-
-            <a href="login.php">Login</a>
-        </form>
     </body>
 </html>

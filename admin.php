@@ -4,6 +4,9 @@
     include("functions/functions.php");
     include("connection.php");
 
+    // error variable array
+    $errors = array();
+
     // check if user has click post button
     if($_SERVER['REQUEST_METHOD'] == "POST"){
         // something was posted
@@ -11,10 +14,8 @@
         $admin_pass = $_POST['admin_pass'];
 
         if(!empty($admin_user) && !empty($admin_pass)){
+            
             //read from database
-            
-            // generate user id
-            
             $query = "select * from admin_db where admin_user = '$admin_user' limit 1";
         
             $result = mysqli_query($con, $query);
@@ -30,46 +31,44 @@
                     }
                 }
             }
-            echo "wrong user name or password!";
-
-
-            // die;
-
-        }else{
-            echo "wrong user name or password!";
+            // the variable of error becomes true
+            $errors[] = "Invalid username or password";
         }
-
-
     }
 
-    // user data
-    // $user_data = check_login($con);
     
 ?>
 
+<?php include("login-header.php")?>
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Admin</title>
-    </head>
-    <body>
 
-        <h1>Admin</h1>
-        <form method="post">
-            <div class="input-group">
-                <label for="admin_user">Username</label>
-                <input type="text" name="admin_user">
-            </div>
-            <div class="input-group">
-                <label for="admin_pass">Password</label>
-                <input type="password" name="admin_pass">
-            </div>
+    <section class="login-section">
+        <div class="container-width">
+            <form method="post" id="login-form">
+                <h1>Login as Admin</h1>
+                <?php 
+                    // if error is true this will display error message
+                    if ($errors) {
+                        foreach ($errors as $error) {
+                            echo "<span>$error</span>";
+                        }
+                    }
+                ?>
+                <div class="input-group">
+                    <label for="admin_user">Username</label>
+                    <input type="text" name="admin_user">
+                </div>
+                <div class="input-group">
+                    <label for="admin_pass">Password</label>
+                    <input type="password" name="admin_pass">
+                </div>
+        
+                <div class="login-button-container">
+                    <button type="submit" class="login-button">Login</button>
+                </div>
+            </form>
+        </div>
+    </section>
 
-            <button type="submit">Login</button>
-        </form>
     </body>
 </html>
