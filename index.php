@@ -7,12 +7,12 @@ session_start();
 	$user_data = check_login($con);
 
 ?>
-<?php include("custom-header.php")?>
+<?php include("header.php")?>
 
     <section class="section-one">
         <div class="container-width">
             <h1>Welcome, <?php echo $user_data['first_name'];?>!</h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque dicta voluptate hic! Quaerat maiores aliquid facere, voluptates numquam sunt voluptatibus eaque consectetur dolor fugiat porro sit ipsum delectus minima maxime!</p>
+            <p>Index description - In this page you will find all my courses available to you, classified by level. You can search them by name or filter by your level.</p>
 
             <form action="search-process.php" method="get" enctype="text/plain">
 
@@ -25,16 +25,6 @@ session_start();
                     </div>
                 </div>
 
-                <!-- <div class="radioContainer">
-                    <div class="radioItems">
-                        <input type="radio" id="highesttolowest" value="highesttolowest" name="card">
-                        <label for="highesttolowest">Highest to Lowest</label>
-                    </div>
-                    <div class="radioItems">
-                        <input type="radio" id="lowesttohighest" value="lowesttohighest" name="card">
-                        <label for="lowesttohighest">Lowest to Highest</label>
-                    </div>
-                </div> -->
             </form>
            
         </div>
@@ -43,10 +33,10 @@ session_start();
     <div class="container-width">
         <div id="courseLevelContainer">
               <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-              <button class="btn" onclick="filterSelection('level1')">Level 1</button>
-              <button class="btn" onclick="filterSelection('level2')">Level 2</button>
-              <button class="btn" onclick="filterSelection('level3')">Level 3</button>
-              <button class="btn" onclick="filterSelection('level4')">Level 4</button>
+              <button class="btn" onclick="filterSelection('Level1')">Level 1</button>
+              <button class="btn" onclick="filterSelection('Level2')">Level 2</button>
+              <button class="btn" onclick="filterSelection('Level3')">Level 3</button>
+              <button class="btn" onclick="filterSelection('Level4')">Level 4</button>
         </div>
     </div>
 
@@ -60,7 +50,9 @@ session_start();
                     while($row = mysqli_fetch_array($result)){
                 ?>
                 <div class="cards-container flex-child <?php echo $row['level']?>">
-                    <img src="<?php echo $row['img_link'] ?>" alt="img-link" class="img-fluid">
+                    <div class="img-container">
+                        <img src="<?php echo $row['img_link'] ?>" alt="img-link" class="img-fluid">
+                    </div>
                  
                     <div class="details">
                         <p class="course-title">

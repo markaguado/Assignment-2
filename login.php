@@ -44,7 +44,7 @@
         <div class="container-width">
             <form method="post" id="login-form">
                
-                <h1>Login Form</h1>
+                <h1>User Login Form</h1>
                 <?php 
                     // if error is true this will display error message
                     if ($errors) {

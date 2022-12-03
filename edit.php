@@ -1,6 +1,8 @@
 
 <?php
     session_start();
+    $successful = array();
+
 
     // file require
     include("functions/functions.php");
@@ -22,13 +24,13 @@
         $phone_number = $_POST['phone_number'];
         $birth_date = $_POST['birth_date'];
 
-        $query = "UPDATE users SET email='$email',passwd='$password', first_name='$first_name', last_name='$last_name', phone_number='$phone_number', birth_date='$birth_date' WHERE id=$id";
+        $query = "UPDATE users SET email='$email',password='$password', first_name='$first_name', last_name='$last_name', phone_number='$phone_number', birth_date='$birth_date' WHERE id=$id";
 
         $result = mysqli_query($con, $query);
 
         if($result){
-            echo "updated";
-            header("Location: administrator.php");
+              // prompt successful
+              $successful[] = "Info is/are now updated";
         } 
 
     }
@@ -50,13 +52,21 @@
                 Create new account
             </a>
             <form method="post" id="login-form">
+                <?php 
+                    // success will display
+                    if ($successful) {
+                        foreach ($successful as $success) {
+                            echo "<alert>$success</span>";
+                        }
+                    }
+                ?>
                 <div class="input-group">
                     <label for="email">Email</label>
                     <input type="text" name="email" value="<?php echo $row['email']?>">
                 </div>
                 <div class="input-group">
                     <label for="password">Password</label>
-                    <input class="form-control" type="password" name="passwd" id="pass" value="<?php echo $row['password']?>">
+                    <input class="form-control" type="password" name="password" id="pass" value="<?php echo $row['password']?>">
                 </div>
                 <div class="input-group">
                     <label for="first_name">First Name</label>

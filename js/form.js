@@ -1,7 +1,6 @@
 
 /* ------------------------------------
-Name: Mark Anthony Jr Aguado                     
-Section: CST 8285 section 302                    
+Keite Gularte                   
 -------------------------------------*/
 
 

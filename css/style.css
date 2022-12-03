@@ -1,3 +1,7 @@
+@import url("../css/responsive.css");
+
+
+
 *,
 ::after,
 ::before {
@@ -25,12 +29,12 @@ a {
 
 #signup-form {
     padding: 20px 10px;
-    width: 800px !important;
+    width: 800px;
     margin: 0 auto;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    background-color: #1F2937;
+    background-color: #695E93;
     color: #fff;
     border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -165,6 +169,18 @@ a {
     color: #695E93 !important;
 }
 
+.img-container {
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.img-container>img {
+    width: 100%;
+    height: 100%;
+    object-fit: revert;
+}
+
 .active {
     transition: 0.s ease;
     font-weight: 700;
@@ -214,19 +230,12 @@ a {
     padding: 10px;
 }
 
-.flex-child>img {
-    height: 250px;
-    overflow: hidden;
-    width: 100%;
-    margin-bottom: -5px;
-    padding: 0;
-}
-
 .cards-container {
     display: none;
 }
 
 .details {
+    height: 180px;
     background-color: #695E93;
     padding: 15px;
     border-bottom-left-radius: 10px;
@@ -340,6 +349,10 @@ tr:hover>td>a {
     color: #695E93 !important;
 }
 
+.cms-table>thead>tr>th {
+    background-color: #695E93;
+    color: #fff;
+}
 
 #cms-form {
     max-width: 300px;
@@ -396,8 +409,42 @@ tr:hover>td>a {
     -o-border-radius: 5px;
 }
 
+.cms-flex-container {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-top: 20px;
 
+}
 
+.cms-flex-child {
+    overflow: hidden;
+}
+
+.cms-flex-child:first-child {
+    overflow: hidden;
+    overflow-y: scroll;
+    padding-left: 20px;
+}
+
+.cms-flex-child>.scrollable-on-mobile {
+    height: 400px;
+}
+
+.cms-flex-child>.scrollable-on-mobile table {
+    padding-top: 0;
+}
+
+.cms-flex-child>.scrollable-on-mobile table>tbody>tr>td>img {
+    width: 100px;
+}
+
+.cms-flex-child>.scrollable-on-mobile table>tbody>tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.cms-flex-child>.scrollable-on-mobile table>tbody>tr>td>a {
+    color: #695E93;
+}
 
 /* login */
 .login-section,
@@ -410,8 +457,7 @@ tr:hover>td>a {
     align-items: center;
 }
 
-#login-form,
-#signup-form {
+#login-form {
     width: 400px;
     margin: 0 auto;
     padding: 30px 20px;
@@ -511,6 +557,7 @@ tr:hover>td>a {
 
 .footer p {
     color: #fff;
+    text-align: center;
 }
 
 /* about us */
@@ -543,7 +590,7 @@ tr:hover>td>a {
 }
 
 .dev-image {
-    width: 300px;
+    height: 300px;
     display: block;
 }
 

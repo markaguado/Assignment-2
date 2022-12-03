@@ -1,0 +1,121 @@
+@media only screen and (max-width: 1299px) {
+    .container-width {
+        width: 90% !important;
+    }
+}
+
+
+@media only screen and (max-width: 1024px) {
+
+    /* course content */
+    .flex-child {
+        flex-basis: 33% !important;
+    }
+
+    .cms-flex-container {
+        flex-wrap: wrap;
+        flex-direction: row !important;
+    }
+
+    .cms-flex-child:first-child {
+        padding-left: 0 !important;
+    }
+
+    .cms-flex-child {
+        flex-basis: 100%;
+    }
+
+    #cms-form {
+        max-width: 100% !important;
+        padding-top: 1em;
+    }
+}
+
+
+
+@media only screen and (max-width: 950px) {
+    .container-width {
+        width: 90% !important;
+    }
+
+    .signup-section {
+        height: auto !important;
+    }
+
+    #signup-form {
+        width: 400px !important;
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    /* course content */
+    .flex-child {
+        flex-basis: 50% !important;
+    }
+
+    .dev-image {
+        height: auto !important;
+        width: 100% !important;
+    }
+
+    .scrollable-on-mobile {
+        overflow: hidden;
+        overflow-x: scroll;
+    }
+
+
+
+}
+
+@media only screen and (max-width: 568px) {
+    .flex-child {
+        flex-basis: 100% !important;
+    }
+
+    /* navigation */
+    .mainNav>.logoContainer>a {
+        font-size: 1.2rem !important;
+    }
+
+    .mainNav>.navLinksContainer {
+        display: flex;
+        align-items: center;
+    }
+
+    .mainNav>.navLinksContainer>li:last-child>a {
+        padding: 10px 15px !important;
+    }
+
+    .mainNav>.navLinksContainer>li:first-child>a {
+        padding-right: 10px !important;
+    }
+
+    .about-items {
+        flex-basis: 100% !important;
+    }
+
+}
+
+
+@media only screen and (max-width: 400px) {
+    .mainNav>.logoContainer>a {
+        font-size: 1rem !important;
+    }
+
+    .mainNav>.navLinksContainer>li:last-child>a {
+        padding: 5px !important;
+    }
+
+    #login-form,
+    #signup-form {
+        width: 100% !important;
+        padding: 20px 10px !important;
+    }
+
+    #signup-form {
+        width: 100% !important;
+        flex-direction: column;
+    }
+}

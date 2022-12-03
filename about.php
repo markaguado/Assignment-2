@@ -1,4 +1,4 @@
-<?php include("custom-header.php")?>
+<?php include("login-header.php")?>
 
 
 <section class="about-section">
@@ -33,12 +33,21 @@
             </div>
 
             <div class="about-items">
-                <img src="" alt="Keite Gularte" class="dev-image">    
+                <img src="img/about/Keite_Viola-2.jpg" alt="Keite Gularte" class="dev-image">    
                 <p class="dev-name">
                     Keite Gularte
                 </p>
                 <p class="dev-desc">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur ratione ipsum dolorum accusantium libero quae veritatis, iste in hic magnam quis harum quam quasi qui atque, voluptatem neque voluptatum ad?
+                    I am a violist, violinist, and music teacher. 
+                    <br>
+                    <br>
+                    I started to play the violin when I was 6 years old. Since then, I got interested in many other things but music won my heart and now I do my living from it.
+                    <br>
+                    <br>
+                    I am very passionate about the continuous process of learning and teaching.
+                    <br>
+                    <br>
+                    I also am interested in technology and how it interacts with the culture.
                 </p>
             </div>
         </div>
