@@ -10,6 +10,7 @@
     // check if user has click post button
     if($_SERVER['REQUEST_METHOD'] == "POST"){
         // something was posted
+        // variables declared 
         $admin_user = $_POST['admin_user'];
         $admin_pass = $_POST['admin_pass'];
 
@@ -23,7 +24,7 @@
             if($result){
                 if($result && mysqli_num_rows($result) > 0){
                     $user_data_admin = mysqli_fetch_assoc($result);
-                    
+                    // checks if the admin pass is equal to input from user
                     if($user_data_admin['admin_pass'] === $admin_pass){
                         $_SESSION['user_id_admin'] = $user_data_admin['user_id_admin'];
                         header("Location: administrator.php");

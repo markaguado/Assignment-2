@@ -1,5 +1,10 @@
-// JavaScript code 
+//
+//
+// Coded by Keite Gularte
+//
+//
 
+// JavaScript code 
 function searchFunction() {
 
     let input = document.getElementById('searchInput').value

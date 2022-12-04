@@ -6,7 +6,7 @@ session_start();
 
 	$user_data_admin = check_admin($con);
 
-    // content management
+    // function for content management system when posting a command
      if($_SERVER['REQUEST_METHOD'] == "POST"){
         // something was posted
         $img_link = $_POST['img_link'];
@@ -34,7 +34,7 @@ session_start();
     <!-- manage website users -->
     <section class="admin-firstfold">
         <div class="container-width">
-    
+            <!-- php function shows who's the current user -->
             <h1>You are login as: <?php echo $user_data_admin['admin_user'] ?></h1>
           
             <h2>
@@ -45,7 +45,6 @@ session_start();
             <div class="scrollable-on-mobile">
                 <table class="table table-sm">
                     <thead>
-                    
                         <tr>
                             <th>
                                 Email
@@ -75,6 +74,7 @@ session_start();
                         
                     </thead>
                     <tbody>
+                        <!-- function that fetch data from the table users to display in the table -->
                         <?php 
                                 $query = "select * from users";
                                 $result = mysqli_query($con, $query);
@@ -83,7 +83,6 @@ session_start();
                         <tr>
                             <td>
                                 <?php echo $row['email']; ?>
-                                
                             </td>
                             <td>
                                 <?php echo $row['first_name']; ?>
@@ -122,13 +121,12 @@ session_start();
     <section class="admin-secfold">
         <div class="container-width">
             <h2>Manage Contents in Homepage</h2>
-            <!-- nice to have -->
+            <!-- table of current courses in the database -->
             <div class="cms-flex-container">
                 <div class="cms-flex-child">
                     <div class="scrollable-on-mobile">
                         <table class="table table-sm cms-table">
                             <thead>
-                            
                                 <tr>
                                     <th>
                                         Image Picture
@@ -149,6 +147,7 @@ session_start();
                                 
                             </thead>
                             <tbody>
+                                  <!-- function that fetch data from the table courses_db to display in the table html -->
                                 <?php 
                                         $query = "select * from course_db";
                                         $result = mysqli_query($con, $query);
@@ -178,6 +177,7 @@ session_start();
                         </table>
                     </div>
                 </div>
+                <!-- dynamic form to add courses to the database -->
                 <form method="post" id="cms-form" class="cms-flex-child">
                     <div class="input-group">
                         <label for="img_link">Image Link URL</label>

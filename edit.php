@@ -3,7 +3,6 @@
     session_start();
     $successful = array();
 
-
     // file require
     include("functions/functions.php");
     include("connection.php");
@@ -51,12 +50,12 @@
             <a href="addnew.php">
                 Create new account
             </a>
-            <form method="post" id="login-form">
+            <form method="post" id="login-form" class="edit-form">
                 <?php 
                     // success will display
                     if ($successful) {
                         foreach ($successful as $success) {
-                            echo "<alert>$success</span>";
+                            echo "<span>$success</span>";
                         }
                     }
                 ?>
@@ -87,7 +86,7 @@
                 </div>
                 <div class="login-button-container">
                     <button type="submit" class="login-button">Update</button>
-        
+                    <!-- if cancel sends back to admin page -->
                     <a href="administrator.php">Cancel</a>
                 </div>
             </form>

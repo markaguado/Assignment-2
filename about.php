@@ -1,5 +1,9 @@
-<?php include("login-header.php")?>
+<!-- 
+    Coded by Mark Aguado,
+    this page is about the developers of the website
+ -->
 
+<?php include("login-header.php")?>
 
 <section class="about-section">
     <div class="container-width">

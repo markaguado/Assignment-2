@@ -1,3 +1,6 @@
+    
+    <!-- footer of the website -->
+    
     <section class="footer">
         <div class="container-width">
     
@@ -8,6 +11,7 @@
         </div>
     </section>
 
+    <!-- closes the body and html tag from the headers used -->
 
 </body>
 </html>

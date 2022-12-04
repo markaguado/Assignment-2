@@ -1,4 +1,8 @@
 
+<!-- 
+    Custom Header for about, admin login, 
+ -->
+
 <!doctype html>
 
 <html lang="en">
@@ -29,9 +33,6 @@
                     <a href="about.php">About Us</a>
                 </li>
 
-                    <!-- <li>
-                        <a href="logout.php">Logout</a>
-                    </li> -->
             </ul>
 
         </nav>

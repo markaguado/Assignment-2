@@ -1,7 +1,5 @@
 @import url("../css/responsive.css");
 
-
-
 *,
 ::after,
 ::before {
@@ -467,6 +465,10 @@ tr:hover>td>a {
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
+}
+
+.edit-form>span {
+    background-color: green !important;
 }
 
 #login-form>.input-group>input,

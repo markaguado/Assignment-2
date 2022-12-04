@@ -1,4 +1,12 @@
 
+<!-- 
+    Custom Header for edit and administrator page and login page.
+    Difference from other headers are there is no login button showing
+    in nav.
+
+    Mark Aguado
+ -->
+
 <!doctype html>
 
 <html lang="en">

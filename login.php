@@ -38,8 +38,6 @@
 
 <?php include("login-header.php")?>
 
-
- 
     <section class="login-section">
         <div class="container-width">
             <form method="post" id="login-form">
@@ -72,6 +70,5 @@
 
         </div>
     </section>
-
-    </body>
-</html>
+    
+<?php include('footer.php')?>
