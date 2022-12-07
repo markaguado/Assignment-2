@@ -30,9 +30,14 @@
                     }
                 }
             }
-            // the variable of error becomes true
-            $errors[] = "Invalid Email or password";
+            else{
+                // the variable of error becomes true
+                $errors[] = "Invalid Email or password";
+            }
         }
+        //if didn't type anything
+        $errors;
+
     }
 ?>
 
