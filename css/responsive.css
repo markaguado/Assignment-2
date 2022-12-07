@@ -63,6 +63,7 @@
     .scrollable-on-mobile {
         overflow: hidden;
         overflow-x: scroll;
+        overflow-y: scroll;
     }
 
 
